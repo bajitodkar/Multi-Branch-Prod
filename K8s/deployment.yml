@@ -1,0 +1,20 @@
+apiVesion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-app
+  namespace: default
+spec:
+  replacas: 5
+  selector:
+    matchLabels:
+      app: movie-app
+  template:
+    metadata:
+      lables:
+        app: movie-app
+    spec:
+      containers:
+        - name: movie-app
+          image: todkarbaji16/multibranch-flask-app:latest
+          ports:
+            - containerPort: 5000
